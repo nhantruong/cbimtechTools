@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{626DB230-69BB-4262-90F0-3889A060AB74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>cbimtechTools</RootNamespace>
+    <AssemblyName>cbimtechTools</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2020\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\..\..\Program Files\Autodesk\Revit 2020\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="cbimtechFunctionRegister.cs" />
+    <Compile Include="Forms\RFI_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RFI_Manager.Designer.cs">
+      <DependentUpon>RFI_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppVersion.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C01_DesignProject.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C02a_MemberSkills.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C02_BIMstaff.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C03_AssignProject.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C04_DMC_PMlist.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C05a_TargetDetail.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C05_BIMtarget.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C06a_ProjectType.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C06_ProjectDetails.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C07_CTCCompanyList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C11_OutsourceList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C12_SiteList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C13_Location.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C14_Descipline.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C15_TimeSheet.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C16a_WorkTypeGroup.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C16_WorkType.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C17_CTCDepartment.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C18_CourseList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C18_CourseList_Detail.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C19_SubContractList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C20_StudentList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C21_SubjectList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C22_CheckList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C23_Hinhthucdaotao.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C24_IssueList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C25_BIM_RnDproject.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C26_Projects_Tracking.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C27_Topic.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C28_NTP.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C29_MucTieuTraining.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C30_NTP_ProjectDetails.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C31_ProjectPhaseDetails.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C32_ProjectPhase.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C33_SolutionOffer.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C34_SoftwareSkill.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C40_PC_List.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C41_PC_CheckingReport.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C42_PC_LendforUse.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C43_SoftwareList.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C44_PCSoftwareReport.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C45_ThucTapSinh.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C46_QLThucTapCTC.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C47_DrawingManage.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C48_VirtualProjects.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C96_CostManage.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C97_CompanyCosts.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C98_AppSettings.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C99_Histories.cs">
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cbimtechModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cbimtechModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cbimtechModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cbimtechModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cbimtechModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cbimtechModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetDataFromCurrentModel.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RFImanage.cs" />
+    <Compile Include="RibbonTabs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\com.cbimtech.GetClashList\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.cbimtech.GetProjectServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="cbimtechTools.addin" />
+    <EntityDeploy Include="Models\cbimtechModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>cbimtechModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\cbimtechModels.edmx.diagram">
+      <DependentUpon>cbimtechModels.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.cbimtech.GetClashList\ClashDetailOutput.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.cbimtech.GetClashList\ClashOutput.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.cbimtech.GetClashList\ClashService.wsdl" />
+    <None Include="Web References\com.cbimtech.GetClashList\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\com.cbimtech.GetProjectServices\DuAnOutput.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.cbimtech.GetProjectServices\ProjectService.wsdl" />
+    <None Include="Web References\com.cbimtech.GetProjectServices\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RFI_Manager.resx">
+      <DependentUpon>RFI_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RFIimage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\cbimtechModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cbimtechModels.edmx</DependentUpon>
+      <LastGenOutput>cbimtechModels.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\cbimtechModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cbimtechModels.edmx</DependentUpon>
+      <LastGenOutput>cbimtechModels.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\Zoom.png" />
+    <None Include="Resources\Zoom out.png" />
+    <None Include="Resources\Zoom in.png" />
+    <None Include="Resources\Zoom auto.png" />
+    <None Include="Resources\YUV color space.png" />
+    <None Include="Resources\Yes.png" />
+    <None Include="Resources\Wrong.png" />
+    <None Include="Resources\Writing pencil.png" />
+    <None Include="Resources\Work area.png" />
+    <None Include="Resources\Wizard.png" />
+    <None Include="Resources\Wide brush.png" />
+    <None Include="Resources\Webcam.png" />
+    <None Include="Resources\Web designer.png" />
+    <None Include="Resources\Warning.png" />
+    <None Include="Resources\Wait.png" />
+    <None Include="Resources\Upload image.png" />
+    <None Include="Resources\Up-down.png" />
+    <None Include="Resources\Up.png" />
+    <None Include="Resources\Unlock.png" />
+    <None Include="Resources\Units.png" />
+    <None Include="Resources\Undo.png" />
+    <None Include="Resources\True color.png" />
+    <None Include="Resources\Triangle.png" />
+    <None Include="Resources\Transparent color.png" />
+    <None Include="Resources\Transparent background.png" />
+    <None Include="Resources\Transparency.png" />
+    <None Include="Resources\Touch.png" />
+    <None Include="Resources\Tools.png" />
+    <None Include="Resources\To do list.png" />
+    <None Include="Resources\Tip of the day.png" />
+    <None Include="Resources\Time.png" />
+    <None Include="Resources\Text tool.png" />
+    <None Include="Resources\Text replace.png" />
+    <None Include="Resources\Text color.png" />
+    <None Include="Resources\Test line.png" />
+    <None Include="Resources\Target1.png" />
+    <None Include="Resources\Target.png" />
+    <None Include="Resources\Tag.png" />
+    <None Include="Resources\Synchronize.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Stop playing.png" />
+    <None Include="Resources\Square.png" />
+    <None Include="Resources\Spray.png" />
+    <None Include="Resources\Spiral.png" />
+    <None Include="Resources\Spell checking.png" />
+    <None Include="Resources\Smooth.png" />
+    <None Include="Resources\Smooth line.png" />
+    <None Include="Resources\Sizes.png" />
+    <None Include="Resources\Show.png" />
+    <None Include="Resources\Sharpness.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Selection.png" />
+    <None Include="Resources\Select gpadient.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Search text.png" />
+    <None Include="Resources\Search online.png" />
+    <None Include="Resources\Search folder.png" />
+    <None Include="Resources\Search computer.png" />
+    <None Include="Resources\Script.png" />
+    <None Include="Resources\Scenario.png" />
+    <None Include="Resources\Scanner.png" />
+    <None Include="Resources\Scan image.png" />
+    <None Include="Resources\Scan film.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Save picture.png" />
+    <None Include="Resources\Save image.png" />
+    <None Include="Resources\Save data.png" />
+    <None Include="Resources\Save color.png" />
+    <None Include="Resources\Save as.png" />
+    <None Include="Resources\Rounded rectangle.png" />
+    <None Include="Resources\Rotation.png" />
+    <None Include="Resources\Rotate right.png" />
+    <None Include="Resources\Rotate left.png" />
+    <None Include="Resources\Rotate CW.png" />
+    <None Include="Resources\Rotate CCW.png" />
+    <None Include="Resources\Right.png" />
+    <None Include="Resources\RGB.png" />
+    <None Include="Resources\Revert.png" />
+    <None Include="Resources\Restangle.png" />
+    <None Include="Resources\Resize image.png" />
+    <None Include="Resources\Replace pixels.png" />
+    <None Include="Resources\Rename.png" />
+    <None Include="Resources\Registry.png" />
+    <None Include="Resources\Registration.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Redo.png" />
+    <None Include="Resources\Red eye removing.png" />
+    <None Include="Resources\Red book.png" />
+    <None Include="Resources\Properties.png" />
+    <None Include="Resources\Problem.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Preview.png" />
+    <None Include="Resources\Play.png" />
+    <None Include="Resources\Pixels.png" />
+    <None Include="Resources\Pixel editor.png" />
+    <None Include="Resources\Pinion.png" />
+    <None Include="Resources\Pin.png" />
+    <None Include="Resources\Pie chart.png" />
+    <None Include="Resources\Picture.png" />
+    <None Include="Resources\Pick color.png" />
+    <None Include="Resources\Pencil.png" />
+    <None Include="Resources\Pen.png" />
+    <None Include="Resources\Paste.png" />
+    <None Include="Resources\Pantone.png" />
+    <None Include="Resources\Painter.png" />
+    <None Include="Resources\Paint over pixels.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Open v2.png" />
+    <None Include="Resources\Open file.png" />
+    <None Include="Resources\Open colors.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\Objects.png" />
+    <None Include="Resources\No.png" />
+    <None Include="Resources\New video.png" />
+    <None Include="Resources\New imagelist.png" />
+    <None Include="Resources\New image.png" />
+    <None Include="Resources\New frame1.png" />
+    <None Include="Resources\New frame.png" />
+    <None Include="Resources\New file.png" />
+    <None Include="Resources\New clip art.png" />
+    <None Include="Resources\Movie.png" />
+    <None Include="Resources\Move.png" />
+    <None Include="Resources\Mouse.png" />
+    <None Include="Resources\Mouse pointer.png" />
+    <None Include="Resources\Monitors.png" />
+    <None Include="Resources\Monitor.png" />
+    <None Include="Resources\Microsoft flag.png" />
+    <None Include="Resources\Measure.png" />
+    <None Include="Resources\Magic hat.png" />
+    <None Include="Resources\Lock.png" />
+    <None Include="Resources\Lock transparency.png" />
+    <None Include="Resources\Lock color.png" />
+    <None Include="Resources\List.png" />
+    <None Include="Resources\Line.png" />
+    <None Include="Resources\Left-right.png" />
+    <None Include="Resources\Left.png" />
+    <None Include="Resources\Layers.png" />
+    <None Include="Resources\LAB color model.png" />
+    <None Include="Resources\Knife.png" />
+    <None Include="Resources\Key.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\Index.png" />
+    <None Include="Resources\Increase time.png" />
+    <None Include="Resources\Import.png" />
+    <None Include="Resources\Icon wizard.png" />
+    <None Include="Resources\Ico.png" />
+    <None Include="Resources\HSV.png" />
+    <None Include="Resources\HSL.png" />
+    <None Include="Resources\Homepage.png" />
+    <None Include="Resources\Home.png" />
+    <None Include="Resources\Hints.png" />
+    <None Include="Resources\Hint.png" />
+    <None Include="Resources\Hide.png" />
+    <None Include="Resources\Hexagon.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\Help book.png" />
+    <None Include="Resources\Grid.png" />
+    <None Include="Resources\Graphic tools.png" />
+    <None Include="Resources\Graphic file.png" />
+    <None Include="Resources\Graphic designer.png" />
+    <None Include="Resources\Gpadient.png" />
+    <None Include="Resources\Go up.png" />
+    <None Include="Resources\Go down.png" />
+    <None Include="Resources\Funnel.png" />
+    <None Include="Resources\Frames.png" />
+    <None Include="Resources\Forward.png" />
+    <None Include="Resources\Form.png" />
+    <None Include="Resources\Folder.png" />
+    <None Include="Resources\Flower.png" />
+    <None Include="Resources\Flow block.png" />
+    <None Include="Resources\Flip.png" />
+    <None Include="Resources\Flip vertically.png" />
+    <None Include="Resources\Flip horizontally.png" />
+    <None Include="Resources\Fine brush.png" />
+    <None Include="Resources\Find.png" />
+    <None Include="Resources\Fill.png" />
+    <None Include="Resources\File exetension.png" />
+    <None Include="Resources\Feather.png" />
+    <None Include="Resources\Favourites.png" />
+    <None Include="Resources\Export.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\Error.png" />
+    <None Include="Resources\Eraser.png" />
+    <None Include="Resources\Erase.png" />
+    <None Include="Resources\Equipment.png" />
+    <None Include="Resources\E-mail.png" />
+    <None Include="Resources\Ellipse.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Edit text.png" />
+    <None Include="Resources\Edit page.png" />
+    <None Include="Resources\Dropper.png" />
+    <None Include="Resources\Download.png" />
+    <None Include="Resources\Download image.png" />
+    <None Include="Resources\Down.png" />
+    <None Include="Resources\Diagram.png" />
+    <None Include="Resources\Designer.png" />
+    <None Include="Resources\Delete1.png" />
+    <None Include="Resources\Delete frames.png" />
+    <None Include="Resources\Delete frame.png" />
+    <None Include="Resources\Decrease time.png" />
+    <None Include="Resources\Danger.png" />
+    <None Include="Resources\Cut.png" />
+    <None Include="Resources\Curve.png" />
+    <None Include="Resources\Curve points.png" />
+    <None Include="Resources\Critical details.png" />
+    <None Include="Resources\Create.png" />
+    <None Include="Resources\Copy.png" />
+    <None Include="Resources\Contrast.png" />
+    <None Include="Resources\Comment.png" />
+    <None Include="Resources\Color.png" />
+    <None Include="Resources\Color test.png" />
+    <None Include="Resources\Color profile.png" />
+    <None Include="Resources\Color palette.png" />
+    <None Include="Resources\Color layers.png" />
+    <None Include="Resources\Color filter.png" />
+    <None Include="Resources\Color balance.png" />
+    <None Include="Resources\Coffee.png" />
+    <None Include="Resources\Coffe.png" />
+    <None Include="Resources\CMYK.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Close folder.png" />
+    <None Include="Resources\Close file.png" />
+    <None Include="Resources\Clipboard.png" />
+    <None Include="Resources\Clear.png" />
+    <None Include="Resources\Circle.png" />
+    <None Include="Resources\Check boxes.png" />
+    <None Include="Resources\Chart xy.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Camera1.png" />
+    <None Include="Resources\Brush.png" />
+    <None Include="Resources\Brightness.png" />
+    <None Include="Resources\Bitmap editor.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\Attach.png" />
+    <None Include="Resources\Arrow.png" />
+    <None Include="Resources\Arc.png" />
+    <None Include="Resources\Apply.png" />
+    <None Include="Resources\Angle.png" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Add folder.png" />
+    <None Include="Resources\About.png" />
+    <None Include="Resources\256 colors.png" />
+    <None Include="Resources\16 colors.png" />
+    <None Include="Resources\3d graph.png" />
+    <None Include="Resources\3d chart.png" />
+    <None Include="Resources\3d bar chart.png" />
+    <None Include="Resources\appbar.refresh.png" />
+    <None Include="Resources\appbar.layout.collapse.left.png" />
+    <None Include="Resources\appbar.chevron.left.png" />
+    <None Include="Resources\lg.triple-gears-loading-icon.gif" />
+    <None Include="Resources\FileViewerIcon.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\ClashIcon.jpg" />
+    <None Include="Resources\Capture.jpg" />
+    <None Include="Resources\Camera.png" />
+    <None Include="Resources\BIMClashIcon.jpg" />
+    <None Include="Web References\com.cbimtech.GetClashList\ClashService.disco" />
+    <None Include="Web References\com.cbimtech.GetProjectServices\ProjectService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://services.cbimtech.com/WebServices/ClashService.asmx%3fop=GetClashList">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.cbimtech.GetClashList\</RelPath>
+      <UpdateFromURL>https://services.cbimtech.com/WebServices/ClashService.asmx%3fop=GetClashList</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>cbimtechTools_com_cbimtech_GetClashList_ClashService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://services.cbimtech.com/WebServices/ProjectService.asmx%3fop=GetProjectList">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.cbimtech.GetProjectServices\</RelPath>
+      <UpdateFromURL>https://services.cbimtech.com/WebServices/ProjectService.asmx%3fop=GetProjectList</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>cbimtechTools_com_cbimtech_GetProjectServices_ProjectService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2018"
+copy "$(ProjectDir)bin\debug\*.dll" "$(AppData)\Autodesk\REVIT\Addins\2018"</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

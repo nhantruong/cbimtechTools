@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d4a03dbaa4e24463a9af73777772eed9" Name="Diagram1">
+        <EntityTypeShape EntityType="cbimtechTools.Models.C01_DesignProject" Width="1.5" PointX="8.25" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C02_BIMstaff" Width="1.5" PointX="3" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C02a_MemberSkills" Width="1.5" PointX="5.25" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C03_AssignProject" Width="1.5" PointX="8.25" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C04_DMC_PMlist" Width="1.5" PointX="3" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C05_BIMtarget" Width="1.5" PointX="11.25" PointY="46.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C05a_TargetDetail" Width="1.5" PointX="13.5" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C06_ProjectDetails" Width="1.5" PointX="10.5" PointY="36.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C06a_ProjectType" Width="1.5" PointX="6" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C07_CTCCompanyList" Width="1.5" PointX="6" PointY="64.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C11_OutsourceList" Width="1.5" PointX="6" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C12_SiteList" Width="1.5" PointX="6" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C13_Location" Width="1.5" PointX="6" PointY="61.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C14_Descipline" Width="1.5" PointX="0.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C15_TimeSheet" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C16_WorkType" Width="1.5" PointX="6" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C16a_WorkTypeGroup" Width="1.5" PointX="3" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C17_CTCDepartment" Width="1.5" PointX="6" PointY="66.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C18_CourseList" Width="1.5" PointX="5.25" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C18_CourseList_Detail" Width="1.5" PointX="8.25" PointY="56.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C19_SubContractList" Width="1.5" PointX="3.75" PointY="70.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C20_StudentList" Width="1.5" PointX="6" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C21_SubjectList" Width="1.5" PointX="3" PointY="42.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C22_CheckList" Width="1.5" PointX="10.5" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C23_Hinhthucdaotao" Width="1.5" PointX="6" PointY="74.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C24_IssueList" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C25_BIM_RnDproject" Width="1.5" PointX="5.25" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C26_Projects_Tracking" Width="1.5" PointX="10.5" PointY="42.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C27_Topic" Width="1.5" PointX="5.25" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C28_NTP" Width="1.5" PointX="11.25" PointY="30.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C29_MucTieuTraining" Width="1.5" PointX="6" PointY="77" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C30_NTP_ProjectDetails" Width="1.5" PointX="13.5" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C31_ProjectPhaseDetails" Width="1.5" PointX="13.5" PointY="41.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C32_ProjectPhase" Width="1.5" PointX="11.25" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C33_SolutionOffer" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C34_SoftwareSkill" Width="1.5" PointX="3" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C40_PC_List" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C41_PC_CheckingReport" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C42_PC_LendforUse" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C43_SoftwareList" Width="1.5" PointX="3.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C44_PCSoftwareReport" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C45_ThucTapSinh" Width="1.5" PointX="8.25" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C46_QLThucTapCTC" Width="1.5" PointX="5.25" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C47_DrawingManage" Width="1.5" PointX="10.5" PointY="52" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C48_VirtualProjects" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C96_CostManage" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C97_CompanyCosts" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C98_AppSettings" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.C99_Histories" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cbimtechTools.Models.AppVersion" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_01_DesignProject_04_DMC_PMlist" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_01_DesignProject_06a_ProjectType" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_01_DesignProject_11_OutsourceList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_01_DesignProject_12_SiteList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_01_DesignProject_13_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_03_AssignProject_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_05a_TargetDetail_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_06_ProjectType_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_15_TimeSheet_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_22_CheckList_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_26_ProjectTracking_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_30_NTP_ProjectDetails_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_31_ProjectPhaseDetails_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_45_ThucTapSinh_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_47_DrawingManage_01_DesignProject" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_02_BIMstaff_14_Descipline" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_02a_MemberSkills_02_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_03_AssignProject_02_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_15_TimeSheet_02_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_02_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_25_BIM_RnDproject_02_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_27_Topic_02_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_45_ThucTapSinh_2_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_46_QLThucTapCTC_02_BIMstaff" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_02a_MemberSkills_02a_MemberSkills" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_03_AssignProject_16_WorkType" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_04_DMC_PMlist_14_Descipline" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_05a_TargetDetail_05_BIMtarget1" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_Detail_07_CTCCompanyList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_Detail_12_SiteList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_15_TimeSheet_16a_WorkTypeGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_16_WorkType_16a_WorkTypeGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_Detail_17_CTCDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_21_SubjectList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_Detail_20_StudentList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_Detail_23_Hinhthucdaotao" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_18_CourseList_Detail_29_MucTieuTraining" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_20_StudentList_19_SubContractList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_30_NTP_ProjectDetails_28_NTP" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_31_ProjectPhaseDetails_32_ProjectPhase" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_41_PC_CheckingReport_40_PC_List" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_42_PC_LendforUse_40_PC_List" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_44_PCSoftwareReport_40_PC_List" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_44_PCSoftwareReport_43_SoftwareList" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_96_CostManage_96_CostManage" ManuallyRouted="false" />
+        <AssociationConnector Association="cbimtechTools.Models.FK_96_CostManage_97_CompanyCosts" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

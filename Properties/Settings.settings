@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="cbimtechTools.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="cbimtechTools_com_cbimtech_GetProjectServices_ProjectService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://services.cbimtech.com/WebServices/ProjectService.asmx</Value>
+    </Setting>
+    <Setting Name="cbimtechTools_com_cbimtech_GetClashList_ClashService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://services.cbimtech.com/WebServices/ClashService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
