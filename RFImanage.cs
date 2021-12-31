@@ -16,8 +16,16 @@ namespace cbimtechTools
     {
         public Result Execute(ExternalCommandData revit, ref string message, ElementSet elements)
         {
+            //Get application and documnet objects
+            UIApplication uiapp = revit.Application;
+            Document doc = uiapp.ActiveUIDocument.Document;
+
             //TaskDialog.Show("RFImanage", "Test first command!!!!!!!!!!!!!!!!!!!!");
-            RFI_Manager rfI_Manager = new RFI_Manager();
+            RFI_Manager rfI_Manager = new RFI_Manager
+            {
+                commandData = revit,
+                doc = doc
+            };
             rfI_Manager.Show();
             return Result.Succeeded;
         }

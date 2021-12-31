@@ -11,16 +11,25 @@ using System.Windows.Forms;
 using cbimtechTools.Models;
 using cbimtechTools.com.cbimtech.GetProjectServices;
 using cbimtechTools.com.cbimtech.GetClashList;
-
-
+using Autodesk.Revit.DB;
+using Autodesk.Revit.UI;
 
 namespace cbimtechTools.Forms
 {
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
-    public partial class RFI_Manager : Form
+    public partial class RFI_Manager : System.Windows.Forms.Form
     {
         private List<DuAnOutput> Projects = new List<DuAnOutput>();
-        private List<ClashOutput> Clashs = new List<ClashOutput>();
+        private List<ClashDetailOutput> Clashs = new List<ClashDetailOutput>();
+
+        //public static ExternalCommandData commandData;
+        /// <summary>
+        /// External Command Data lấy từ RFImanage qua
+        /// </summary>
+        internal ExternalCommandData commandData;
+
+        public Document doc { get; internal set; }
+
         public RFI_Manager()
         {
             InitializeComponent();
@@ -42,25 +51,59 @@ namespace cbimtechTools.Forms
         {
             try
             {
+                //commandData = new ExternalCommandData();
+                ////Revit
+                //UIApplication uiapp = commandData.Application;
+                //Document doc = uiapp.ActiveUIDocument.Document;
+
+                //cbimtech
                 Projects = new ProjectService().GetProjectList().ToList();
                 cmbSelectProject.Items.AddRange(Projects.Where(s => s.ProjectState == "Ongoing" && s.TenDuAn != "BIM team").Select(s => s.TenDuAn).ToArray());
                 lblStatus.Text = "Load thông tin từ server thành công";
-                LoadMatrix(cmbMatrix1);
-                LoadMatrix(cmbMatrix2);
-                LoadPriority(cmbPriority);
+
+                using (ClashService cs = new ClashService())
+                {
+                    var itm = cs.GetClashMatrixDefault();
+                    cmbMatrix1.Items.AddRange(itm);
+                    cmbMatrix2.Items.AddRange(itm);
+
+                    cmbErrorType.Items.AddRange(cs.GetClashErrorType());
+                    cmbStatus.Items.AddRange(cs.GetClashStatus());
+                }
+                cmbPriority.Items.AddRange((object[])LoadPriority());
+
+                //NỘi dung bên trong MÔ hình
+                cmbLevel.Items.AddRange(GetLevels());
             }
             catch (Exception ex)
             {
                 cmbSelectProject.Items.Add("Không có dự án");
-                lblStatus.Text = ex.Message;
+                lblStatus.Text = $"Có lỗi do {ex.Message}";
             }
+        }
+
+        private string[] GetLevels()
+        {
+            // Use ElementLevel filter to find elements by their associated level in the document
+            string[] levelItem;
+            // Find the level whose Name is "Level 1"
+            FilteredElementCollector collector = new FilteredElementCollector(doc);
+            ICollection<Element> collection = collector.OfClass(typeof(Level)).ToElements();
+            if (collection.Count() == 0) return null;
+            levelItem = new string[collection.Count()];
+            for (int i = 0; i < collection.Count(); i++)
+            {
+                Level level = collection.ToArray()[i] as Level;
+                levelItem[i] = level.Name;
+            }
+            return levelItem;
         }
 
         private void AddClashToTreeView(bool v)
         {
             if (v)
             {
-                Clashs = new ClashService().GetClashList().Where(s => s.ProjectName == cmbSelectProject.Text).ToList();
+                Clashs = new ClashService().GetClashDetailList().Where(s => s.ProjectName == cmbSelectProject.Text).ToList();
                 TreeNode root = new TreeNode($"{cmbSelectProject.Text}")
                 {
                     NodeFont = new Font(treeView_ClashList.Font, FontStyle.Bold)
@@ -102,10 +145,11 @@ namespace cbimtechTools.Forms
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //_ = MessageBox.Show($"View detail {treeView_ClashList.SelectedNode.Text}", "Details");
+            if (treeView_ClashList.SelectedNode.Level != 0) return;
             string pro = treeView_ClashList.SelectedNode.Parent.Text;
             try
             {
-                ClashOutput itm = Clashs.Where(s => s.ProjectName == pro && s.IssueCode == treeView_ClashList.SelectedNode.Text).FirstOrDefault();
+                ClashDetailOutput itm = Clashs.Where(s => s.ProjectName == pro && s.IssueCode == treeView_ClashList.SelectedNode.Text).FirstOrDefault();
                 ShowClash(itm);
             }
             catch (Exception ex)
@@ -116,7 +160,7 @@ namespace cbimtechTools.Forms
 
         }
 
-        private void ShowClash(ClashOutput itm)
+        private void ShowClash(ClashDetailOutput itm)
         {
             try
             {
@@ -124,8 +168,15 @@ namespace cbimtechTools.Forms
                 lblProjectName.Text = itm.ProjectName;
                 issueCode.Text = itm.IssueCode;
                 issueDate.Value = itm.IssueDate;
+                issueDate.Format = DateTimePickerFormat.Short;
                 cmbStatus.Text = itm.IssueStatus;
                 Revision.Value = itm.Revision;
+                txtFrom.Text = itm.From;
+                txtIssueDescription.Text = itm.IssueDescription;
+                cmbMatrix1.Text = itm.Matrix1;
+                cmbMatrix2.Text = itm.Matrix2;
+                //cmbPriority.Text = itm.Priority;
+                cmbErrorType.Text = itm.ErrorType;
 
             }
             catch (Exception)
@@ -135,36 +186,17 @@ namespace cbimtechTools.Forms
             }
         }
 
-        private void LoadPriority(ComboBox cmbPriority)
+        private Array LoadPriority()
         {
-            try
-            {
-                cmbPriority.Items.Add("EH");
-                cmbPriority.Items.Add("H");
-                cmbPriority.Items.Add("L");
-                cmbPriority.Items.Add("N/A");
-            }
-            catch (Exception ex)
-            {
-                lblStatus.Text = ex.Message;
-            }
+            string[] item = new string[4];
+            item[0] = "EH";
+            item[1] = "H";
+            item[2] = "L";
+            item[3] = "N/A";
+            return item;
         }
 
-        private void LoadMatrix(ComboBox cmbMatrix1)
-        {
-            try
-            {
-                using (ClashService cs = new ClashService())
-                {
-                    cmbMatrix1.Items.AddRange(cs.GetClashMatrix().ToArray());
-                }
 
-            }
-            catch (Exception ex)
-            {
-                lblStatus.Text = ex.Message;
-            }
-        }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -193,11 +225,12 @@ namespace cbimtechTools.Forms
 
         private void treeView_ClashList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            if (treeView_ClashList.SelectedNode.Level != 0) return;
             string pro = treeView_ClashList.SelectedNode.Parent.Text;
             try
             {
 
-                ClashOutput itm = Clashs.Where(s => s.ProjectName == pro && s.IssueCode == treeView_ClashList.SelectedNode.Text).FirstOrDefault();
+                ClashDetailOutput itm = Clashs.Where(s => s.ProjectName == pro && s.IssueCode == treeView_ClashList.SelectedNode.Text).FirstOrDefault();
                 ShowClash(itm);
             }
             catch (Exception ex)
@@ -205,6 +238,7 @@ namespace cbimtechTools.Forms
                 lblStatus.Text = $"Không tìm thấy {treeView_ClashList.SelectedNode.Text} trong {pro} do {ex.Message}";
 
             }
+
         }
     }
 }

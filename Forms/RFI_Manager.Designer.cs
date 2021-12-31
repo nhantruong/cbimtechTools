@@ -35,6 +35,8 @@ namespace cbimtechTools.Forms
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblProjectName = new System.Windows.Forms.Label();
+            this.lblProjectID = new System.Windows.Forms.Label();
             this.treeView_ClashList = new System.Windows.Forms.TreeView();
             this.rfiRightClickAction = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,32 +47,36 @@ namespace cbimtechTools.Forms
             this.archiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lblProjectID = new System.Windows.Forms.Label();
-            this.lblProjectName = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.issueCode = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.issueDate = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Revision = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtIssueDescription = new System.Windows.Forms.TextBox();
-            this.txtFrom = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbMatrix1 = new System.Windows.Forms.ComboBox();
-            this.cmbMatrix2 = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmbPriority = new System.Windows.Forms.ComboBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtSource = new System.Windows.Forms.TextBox();
+            this.cmbGrid_To = new System.Windows.Forms.ComboBox();
+            this.cmbGrid_From = new System.Windows.Forms.ComboBox();
+            this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.cmbErrorType = new System.Windows.Forms.ComboBox();
+            this.cmbPriority = new System.Windows.Forms.ComboBox();
+            this.cmbMatrix2 = new System.Windows.Forms.ComboBox();
+            this.cmbMatrix1 = new System.Windows.Forms.ComboBox();
+            this.txtFrom = new System.Windows.Forms.TextBox();
+            this.txtIssueDescription = new System.Windows.Forms.TextBox();
+            this.Revision = new System.Windows.Forms.NumericUpDown();
+            this.issueDate = new System.Windows.Forms.DateTimePicker();
+            this.issueCode = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.StatusMenu.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.rfiRightClickAction.SuspendLayout();
@@ -125,6 +131,26 @@ namespace cbimtechTools.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chọn dự án";
             // 
+            // lblProjectName
+            // 
+            this.lblProjectName.AutoSize = true;
+            this.lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProjectName.Location = new System.Drawing.Point(264, 19);
+            this.lblProjectName.Name = "lblProjectName";
+            this.lblProjectName.Size = new System.Drawing.Size(98, 16);
+            this.lblProjectName.TabIndex = 1;
+            this.lblProjectName.Text = "ProjectName";
+            // 
+            // lblProjectID
+            // 
+            this.lblProjectID.AutoSize = true;
+            this.lblProjectID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProjectID.Location = new System.Drawing.Point(184, 19);
+            this.lblProjectID.Name = "lblProjectID";
+            this.lblProjectID.Size = new System.Drawing.Size(72, 16);
+            this.lblProjectID.TabIndex = 0;
+            this.lblProjectID.Text = "ProjectID";
+            // 
             // treeView_ClashList
             // 
             this.treeView_ClashList.Dock = System.Windows.Forms.DockStyle.Left;
@@ -167,7 +193,7 @@ namespace cbimtechTools.Forms
             // 
             this.openToolStripMenuItem.Image = global::cbimtechTools.AppResource.Open;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -175,7 +201,7 @@ namespace cbimtechTools.Forms
             // 
             this.closeToolStripMenuItem.Image = global::cbimtechTools.AppResource.Apply;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -217,8 +243,32 @@ namespace cbimtechTools.Forms
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Clash Container";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(3, 160);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(838, 313);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Image";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox5.Location = new System.Drawing.Point(3, 473);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(838, 78);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Solutions";
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtSource);
+            this.groupBox3.Controls.Add(this.cmbGrid_To);
+            this.groupBox3.Controls.Add(this.cmbGrid_From);
+            this.groupBox3.Controls.Add(this.cmbLevel);
             this.groupBox3.Controls.Add(this.cmbErrorType);
             this.groupBox3.Controls.Add(this.cmbPriority);
             this.groupBox3.Controls.Add(this.cmbMatrix2);
@@ -232,7 +282,9 @@ namespace cbimtechTools.Forms
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
@@ -248,106 +300,91 @@ namespace cbimtechTools.Forms
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Info";
             // 
-            // groupBox5
+            // txtSource
             // 
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox5.Location = new System.Drawing.Point(3, 473);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(838, 78);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Solutions";
+            this.txtSource.Location = new System.Drawing.Point(442, 49);
+            this.txtSource.Name = "txtSource";
+            this.txtSource.Size = new System.Drawing.Size(395, 20);
+            this.txtSource.TabIndex = 11;
             // 
-            // groupBox4
+            // cmbGrid_To
             // 
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 160);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(838, 313);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Image";
+            this.cmbGrid_To.FormattingEnabled = true;
+            this.cmbGrid_To.Location = new System.Drawing.Point(320, 48);
+            this.cmbGrid_To.Name = "cmbGrid_To";
+            this.cmbGrid_To.Size = new System.Drawing.Size(63, 21);
+            this.cmbGrid_To.TabIndex = 10;
             // 
-            // lblProjectID
+            // cmbGrid_From
             // 
-            this.lblProjectID.AutoSize = true;
-            this.lblProjectID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProjectID.Location = new System.Drawing.Point(184, 19);
-            this.lblProjectID.Name = "lblProjectID";
-            this.lblProjectID.Size = new System.Drawing.Size(72, 16);
-            this.lblProjectID.TabIndex = 0;
-            this.lblProjectID.Text = "ProjectID";
+            this.cmbGrid_From.FormattingEnabled = true;
+            this.cmbGrid_From.Location = new System.Drawing.Point(232, 48);
+            this.cmbGrid_From.Name = "cmbGrid_From";
+            this.cmbGrid_From.Size = new System.Drawing.Size(63, 21);
+            this.cmbGrid_From.TabIndex = 10;
             // 
-            // lblProjectName
+            // cmbLevel
             // 
-            this.lblProjectName.AutoSize = true;
-            this.lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProjectName.Location = new System.Drawing.Point(264, 19);
-            this.lblProjectName.Name = "lblProjectName";
-            this.lblProjectName.Size = new System.Drawing.Size(98, 16);
-            this.lblProjectName.TabIndex = 1;
-            this.lblProjectName.Text = "ProjectName";
+            this.cmbLevel.FormattingEnabled = true;
+            this.cmbLevel.Location = new System.Drawing.Point(35, 48);
+            this.cmbLevel.Name = "cmbLevel";
+            this.cmbLevel.Size = new System.Drawing.Size(152, 21);
+            this.cmbLevel.TabIndex = 9;
             // 
-            // cmbStatus
+            // cmbErrorType
             // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(442, 16);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(106, 21);
-            this.cmbStatus.TabIndex = 2;
+            this.cmbErrorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbErrorType.FormattingEnabled = true;
+            this.cmbErrorType.Location = new System.Drawing.Point(754, 82);
+            this.cmbErrorType.Name = "cmbErrorType";
+            this.cmbErrorType.Size = new System.Drawing.Size(81, 21);
+            this.cmbErrorType.TabIndex = 8;
             // 
-            // label1
+            // cmbPriority
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(399, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Status";
+            this.cmbPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbPriority.FormattingEnabled = true;
+            this.cmbPriority.Location = new System.Drawing.Point(754, 117);
+            this.cmbPriority.Name = "cmbPriority";
+            this.cmbPriority.Size = new System.Drawing.Size(81, 21);
+            this.cmbPriority.TabIndex = 8;
             // 
-            // label2
+            // cmbMatrix2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "RFI No.";
+            this.cmbMatrix2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbMatrix2.FormattingEnabled = true;
+            this.cmbMatrix2.Location = new System.Drawing.Point(539, 117);
+            this.cmbMatrix2.Name = "cmbMatrix2";
+            this.cmbMatrix2.Size = new System.Drawing.Size(134, 21);
+            this.cmbMatrix2.TabIndex = 8;
             // 
-            // issueCode
+            // cmbMatrix1
             // 
-            this.issueCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issueCode.Location = new System.Drawing.Point(53, 16);
-            this.issueCode.Name = "issueCode";
-            this.issueCode.Size = new System.Drawing.Size(120, 33);
-            this.issueCode.TabIndex = 3;
-            this.issueCode.Text = "RFI No.";
+            this.cmbMatrix1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbMatrix1.FormattingEnabled = true;
+            this.cmbMatrix1.Location = new System.Drawing.Point(536, 82);
+            this.cmbMatrix1.Name = "cmbMatrix1";
+            this.cmbMatrix1.Size = new System.Drawing.Size(137, 21);
+            this.cmbMatrix1.TabIndex = 8;
             // 
-            // label4
+            // txtFrom
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Date";
+            this.txtFrom.Location = new System.Drawing.Point(726, 16);
+            this.txtFrom.Multiline = true;
+            this.txtFrom.Name = "txtFrom";
+            this.txtFrom.Size = new System.Drawing.Size(109, 21);
+            this.txtFrom.TabIndex = 7;
             // 
-            // issueDate
+            // txtIssueDescription
             // 
-            this.issueDate.CustomFormat = "\"dd/MM/yyyy\"";
-            this.issueDate.Location = new System.Drawing.Point(225, 16);
-            this.issueDate.Name = "issueDate";
-            this.issueDate.Size = new System.Drawing.Size(178, 20);
-            this.issueDate.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(554, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Rev.";
+            this.txtIssueDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtIssueDescription.Location = new System.Drawing.Point(6, 80);
+            this.txtIssueDescription.Multiline = true;
+            this.txtIssueDescription.Name = "txtIssueDescription";
+            this.txtIssueDescription.Size = new System.Drawing.Size(474, 58);
+            this.txtIssueDescription.TabIndex = 6;
             // 
             // Revision
             // 
@@ -361,101 +398,22 @@ namespace cbimtechTools.Forms
             this.Revision.Size = new System.Drawing.Size(87, 20);
             this.Revision.TabIndex = 5;
             // 
-            // label3
+            // issueDate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(693, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "From";
+            this.issueDate.CustomFormat = "dd/MM/yyyy";
+            this.issueDate.Location = new System.Drawing.Point(225, 16);
+            this.issueDate.Name = "issueDate";
+            this.issueDate.Size = new System.Drawing.Size(158, 20);
+            this.issueDate.TabIndex = 4;
             // 
-            // label6
+            // issueCode
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Grid";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 85);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Description";
-            // 
-            // txtIssueDescription
-            // 
-            this.txtIssueDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtIssueDescription.Location = new System.Drawing.Point(69, 80);
-            this.txtIssueDescription.Multiline = true;
-            this.txtIssueDescription.Name = "txtIssueDescription";
-            this.txtIssueDescription.Size = new System.Drawing.Size(411, 58);
-            this.txtIssueDescription.TabIndex = 6;
-            // 
-            // txtFrom
-            // 
-            this.txtFrom.Location = new System.Drawing.Point(726, 16);
-            this.txtFrom.Multiline = true;
-            this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(109, 21);
-            this.txtFrom.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(486, 85);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Matrix 1";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(486, 120);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Matrix 2";
-            // 
-            // cmbMatrix1
-            // 
-            this.cmbMatrix1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbMatrix1.FormattingEnabled = true;
-            this.cmbMatrix1.Location = new System.Drawing.Point(536, 82);
-            this.cmbMatrix1.Name = "cmbMatrix1";
-            this.cmbMatrix1.Size = new System.Drawing.Size(137, 21);
-            this.cmbMatrix1.TabIndex = 8;
-            // 
-            // cmbMatrix2
-            // 
-            this.cmbMatrix2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbMatrix2.FormattingEnabled = true;
-            this.cmbMatrix2.Location = new System.Drawing.Point(539, 117);
-            this.cmbMatrix2.Name = "cmbMatrix2";
-            this.cmbMatrix2.Size = new System.Drawing.Size(134, 21);
-            this.cmbMatrix2.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(679, 85);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(56, 13);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Error Type";
+            this.issueCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issueCode.Location = new System.Drawing.Point(53, 16);
+            this.issueCode.Name = "issueCode";
+            this.issueCode.Size = new System.Drawing.Size(120, 33);
+            this.issueCode.TabIndex = 3;
+            this.issueCode.Text = "RFI No.";
             // 
             // label11
             // 
@@ -468,25 +426,136 @@ namespace cbimtechTools.Forms
             this.label11.TabIndex = 3;
             this.label11.Text = "Priority Matrix";
             // 
-            // cmbPriority
+            // label9
             // 
-            this.cmbPriority.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(486, 120);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Matrix 2";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(679, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(56, 13);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Error Type";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(486, 85);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Matrix 1";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbPriority.FormattingEnabled = true;
-            this.cmbPriority.Location = new System.Drawing.Point(754, 117);
-            this.cmbPriority.Name = "cmbPriority";
-            this.cmbPriority.Size = new System.Drawing.Size(81, 21);
-            this.cmbPriority.TabIndex = 8;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(301, 51);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(13, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "&&";
             // 
-            // cmbErrorType
+            // label14
             // 
-            this.cmbErrorType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbErrorType.FormattingEnabled = true;
-            this.cmbErrorType.Location = new System.Drawing.Point(754, 82);
-            this.cmbErrorType.Name = "cmbErrorType";
-            this.cmbErrorType.Size = new System.Drawing.Size(81, 21);
-            this.cmbErrorType.TabIndex = 8;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(395, 49);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Source";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(193, 51);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Grid";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Level";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(693, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "From";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "RFI No.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(189, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Date";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(554, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Rev.";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(399, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Status";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(442, 16);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(106, 21);
+            this.cmbStatus.TabIndex = 2;
             // 
             // RFI_Manager
             // 
@@ -547,7 +616,6 @@ namespace cbimtechTools.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.TextBox txtIssueDescription;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbErrorType;
         private System.Windows.Forms.ComboBox cmbPriority;
@@ -557,5 +625,12 @@ namespace cbimtechTools.Forms
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtSource;
+        private System.Windows.Forms.ComboBox cmbGrid_To;
+        private System.Windows.Forms.ComboBox cmbGrid_From;
+        private System.Windows.Forms.ComboBox cmbLevel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
     }
 }

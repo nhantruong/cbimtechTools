@@ -13,7 +13,8 @@ namespace cbimtechTools
         public RibbonTabs ribbonTabs = new RibbonTabs();
         public Result OnShutdown(UIControlledApplication application)
         {
-            throw new NotImplementedException();
+            TaskDialog.Show("cbimtech", "Thanks for comming!");
+            return Result.Succeeded;
         }
 
         public Result OnStartup(UIControlledApplication application)
